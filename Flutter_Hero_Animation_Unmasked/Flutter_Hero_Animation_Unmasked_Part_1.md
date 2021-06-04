@@ -114,6 +114,10 @@ And we now have a regular transition without any widget flying from one page to 
 
 ### 2. Listen to the Navigation
 
+<div style="text-align: center;">
+  <img src="https://media.giphy.com/media/lWSFOPwzd2JuE/giphy.gif" height="150" style="border-radius: 20px;" alt="Listen to the Navigation" />
+</div>
+
 #### 2.1. Extends NavigatorObserver to listen to navigation behaviors
 
 Commit: [b18b384](https://github.com/guitoof/hero-animation-unmasked/commit/b18b3847d6ff22ff045afe4247f1efabce5ce5fa)
@@ -153,6 +157,11 @@ This allows us to listen to navigation events like `didPush`.
 
 #### 2.2 Check flight validity & ignore if does not have a valid origin & destination
 
+<div style="text-align: center;">
+  <img src="https://media.giphy.com/media/l2Je1uYp5ctVttrDq/giphy.gif
+" height="150" style="border-radius: 20px;" alt="Check Flight validity" />
+</div>
+
 Commit: [5426287](https://github.com/guitoof/hero-animation-unmasked/commit/5426287eb05216d2018ba3e500de357a4e94ae1f)
 
 ```dart
@@ -186,6 +195,10 @@ super.didPush(toRoute, fromRoute);
 ```
 
 ### 3. "Heroes, Assemble!"
+
+<div style="text-align: center;">
+  <img src="https://media.giphy.com/media/j2pWZpr5RlpCodOB0d/giphy.gif" height="150" style="border-radius: 20px;" alt="Heroes Assemble!" />
+</div>
 
 #### 3.1 Visit & Invite source & dest. heroes
 
@@ -290,6 +303,10 @@ for (UnmaskedHeroState hero in destinationHeroes.values) { /// browse throught t
 
 ### 4. Display the flying Hero on overlay
 
+<div style="text-align: center;">
+  <img src="https://media.giphy.com/media/eIUpSyzwGp0YhAMTKr/giphy.gif" height="150" style="border-radius: 20px;" alt="Display Hero on Overlay" />
+</div>
+
 Commit: [fba28365be2633b48bfca642769ada8f419d786d](https://github.com/guitoof/hero-animation-unmasked/commit/fba28365be2633b48bfca642769ada8f419d786d)
 
 Now that we took a hold on our flying Hero, let's create and call a `_displayFlyingHero` method to make them appear on screen using Flutter's [Overlay class](https://api.flutter.dev/flutter/widgets/Overlay-class.html)
@@ -348,7 +365,7 @@ However, it does not fly yet ...
 I really hope that you enjoyed this 1st Part of Hero Animation Unmasked. Hopefully, this Hero widget should start to appear less magical.
 In the next part [Hero Animation Unmasked - Part 2](./Flutter_Hero_Animation_Unmasked_Part_2.md), we'll make our Hero fly from the source page to the destination by playing a little more with elements' positions and adding the animation.
 
-#### Acknowledgment
+## Acknowledgment
 
 I'd like to give a big and sincere shoutout to:
 
