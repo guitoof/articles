@@ -371,6 +371,8 @@ Let's take a look at what we've done so far:
 I really hope that you enjoyed this 1st Part of Hero Animation Unmasked. Hopefully, this Hero widget should start to appear less magical.
 In the next part [Hero Animation Unmasked - Part 2](./Flutter_Hero_Animation_Unmasked_Part_2.md), we'll make our Hero fly from the source page to the destination by playing a little more with elements' positions and adding the animation.
 
+If you have any questions, if you find any mistakes or inaccuracies or if you just want to have a chat about Flutter, I'd be very happy to. You can find me on Twitter [@Guitoof](https://twitter.com/guitoof) or on the [Flutter Community Slack](https://fluttercommunity.slack.com/) where I also go by the name `Guitoof`.
+
 ## Acknowledgment
 
 I'd like to give a big and sincere shoutout to:
