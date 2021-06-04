@@ -115,7 +115,7 @@ And we now have a regular transition without any widget flying from one page to 
 ### 2. Listen to the Navigation
 
 <div style="text-align: center;">
-  <img src="https://media.giphy.com/media/lWSFOPwzd2JuE/giphy.gif" height="150" style="border-radius: 20px;" alt="Listen to the Navigation" />
+  <img src="https://media.giphy.com/media/lWSFOPwzd2JuE/giphy.gif" height="150" style="border-radius:20px;" alt="Listen to the Navigation" />
 </div>
 
 #### 2.1. Extends NavigatorObserver to listen to navigation behaviors
@@ -158,8 +158,7 @@ This allows us to listen to navigation events like `didPush`.
 #### 2.2 Check flight validity & ignore if does not have a valid origin & destination
 
 <div style="text-align: center;">
-  <img src="https://media.giphy.com/media/l2Je1uYp5ctVttrDq/giphy.gif
-" height="150" style="border-radius: 20px;" alt="Check Flight validity" />
+  <img src="https://media.giphy.com/media/l2Je1uYp5ctVttrDq/giphy.gif" height="150" style="border-radius: 20px;" alt="Check Flight validity" />
 </div>
 
 Commit: [5426287](https://github.com/guitoof/hero-animation-unmasked/commit/5426287eb05216d2018ba3e500de357a4e94ae1f)
@@ -352,15 +351,22 @@ void didPush(Route<dynamic> toRoute, Route<dynamic>? fromRoute) {
 
 Here, we create an [`OverlayEntry`](https://api.flutter.dev/flutter/widgets/OverlayEntry-class.html), wrap our hero widget's child inside and pass it to `navigator.overlay.insert` to display a widget over the whole content of the app. This is a great feature of Flutter that you can leverage to craft your own modals, floating action sheets or overlaying "Help" features.
 
-With this, the Hero's child is displayed majestically over the rest of the app.
-
 <div style="text-align: center;">
   <img src="./images/Unmasked_Hero_on_Overlay.gif" height="300" style="border-radius: 20px;" alt="Unmasked Hero displayed on Overlay" />
 </div>
 
-However, it does not fly yet ...
+With this, our `UnmaskedHero`'s child is displayed majestically over the rest of the app 🎉 ... but it does not fly yet ...
 
 ### To be continued ...
+
+That is already a lot to process, so I suggest that we take a break so that you can digest it all.
+Let's take a look at what we've done so far:
+
+1. We understood the general mechanism of the Hero Animation
+2. We created our own `UnmaskedHero` widget and its `UnmaskedHeroController`
+3. We hooked ourselves to the `didPush` Navigation method to react to navigation
+4. We browsed the Elements Tree to look for interesting Widget instances
+5. We displayed our `UnmaskedHero` into the screen overlay
 
 I really hope that you enjoyed this 1st Part of Hero Animation Unmasked. Hopefully, this Hero widget should start to appear less magical.
 In the next part [Hero Animation Unmasked - Part 2](./Flutter_Hero_Animation_Unmasked_Part_2.md), we'll make our Hero fly from the source page to the destination by playing a little more with elements' positions and adding the animation.
