@@ -170,15 +170,15 @@ Commit: [5426287](https://github.com/guitoof/hero-animation-unmasked/commit/5426
 
 /// Checks whether the hero's flight has a valid origin & destination routes
 bool _isFlightValid(PageRoute? fromRoute, PageRoute toRoute) {
-if (fromRoute == null) {
-    return false;
-}
-BuildContext? fromRouteContext = fromRoute.subtreeContext;
-BuildContext? toRouteContext = toRoute.subtreeContext;
-if (fromRouteContext == null || toRouteContext == null) {
-    return false;
-}
-return true;
+  if (fromRoute == null) {
+      return false;
+  }
+  BuildContext? fromRouteContext = fromRoute.subtreeContext;
+  BuildContext? toRouteContext = toRoute.subtreeContext;
+  if (fromRouteContext == null || toRouteContext == null) {
+      return false;
+  }
+  return true;
 }
 
 @override
@@ -209,7 +209,7 @@ Commit: [ccfba16311c555d6b3947621371158da625bb90e](https://github.com/guitoof/he
 ...
 /// Visit & Invite all heroes of given context to the party
 Map<String, UnmaskedHeroState> _inviteHeroes(BuildContext context) {
-Map<String, UnmaskedHeroState> heroes = {};
+  Map<String, UnmaskedHeroState> heroes = {};
   void _visitHero(Element element) {
     if (element.widget is UnmaskedHero) {
       final StatefulElement hero = element as StatefulElement;
