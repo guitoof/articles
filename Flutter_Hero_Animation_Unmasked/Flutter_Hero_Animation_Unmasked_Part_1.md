@@ -2,7 +2,9 @@
 
 You all know Flutter's famous [Hero animation](https://flutter.dev/docs/development/ui/animations/hero-animations) where a "Hero" widget "flies" from one page to the next during a navigation transition:
 
-![Real Hero Animation Demo](./images/Real_Hero_Animation.gif)
+<div style="text-align: center;">
+  <img src="./images/Real_Hero_Animation.gif" height="300" style="border-radius: 20px;" alt="Hero Animation" />
+</div>
 
 This animation is pretty cool and is surely a great way to triggers that "Wow" effect with only a few lines of code.
 🤔 It's so simple that it strangely looks like some kind of wizardry, doesn't it?
@@ -19,11 +21,19 @@ _Because this is a fairly long journey, I will split into 2 parts:_
 Before diving into the wicked part, let's have look at the general mechanism of this feature:
 
 1. Given 2 pages (source & destination), which both contains `Hero` widgets with the a `tag` property holding the same value.
-   ![Initial State](./images/initial_state.png)
+<div style="text-align: center;">
+  <img src="./images/initial_state.png" height="200" alt="Hero Animation - Initial State" />
+</div>
+
 2. Copy the widget's content into an [Overlay](https://api.flutter.dev/flutter/widgets/Overlay-class.html)
-   ![Initial State](./images/initial_state_with_overlay.png)
+<div style="text-align: center;">
+  <img src="./images/initial_state_with_overlay.png" height="200" alt="Hero Animation - Initial State with overlay" />
+</div>
+
 3. Animate the overlayed widget from the source to the destination position on screen
-   ![Initial State](./images/overlay_animated.png)
+<div style="text-align: center;">
+  <img src="./images/overlay_animated.png" height="200" alt="Hero Animation - Overlay Animated" />
+</div>
 
 This 1 part [(Flutter Hero Animation Unmasked - Part 1)](./Flutter_Hero_Animation_Unmasked_Part_1.md) will focus on steps 1 and 2. Step 3. is described in the second part of this article: ["Flutter Hero Animation Unmasked - Part 2"](./Flutter_Hero_Animation_Unmasked_Part_2.md).
 
@@ -95,7 +105,10 @@ child: UnmaskedHero(
 ```
 
 And we now have a regular transition without any widget flying from one page to the other ...
-![Transition without Hero animation](./images/Without_Hero_Transition.gif)
+
+<div style="text-align: center;">
+  <img src="./images/Without_Hero_Transition.gif" height="300" style="border-radius: 20px;" alt="Transition without Hero animation" />
+</div>
 
 **BooooOOOORING! 👎**
 
@@ -324,7 +337,9 @@ Here, we create an [`OverlayEntry`](https://api.flutter.dev/flutter/widgets/Over
 
 With this, the Hero's child is displayed majestically over the rest of the app.
 
-![Unmasked Hero displayed on Overlay](./images/Unmasked_Hero_on_Overlay.gif)
+<div style="text-align: center;">
+  <img src="./images/Unmasked_Hero_on_Overlay.gif" height="300" style="border-radius: 20px;" alt="Unmasked Hero displayed on Overlay" />
+</div>
 
 However, it does not fly yet ...
 
