@@ -9,9 +9,9 @@ You all know Flutter's famous [Hero animation](https://flutter.dev/docs/developm
 This animation is pretty cool and is surely a great way to triggers that "Wow" effect with only a few lines of code.
 🤔 It's so simple that it strangely looks like some kind of wizardry, doesn't it?
 Have you ever wonder what was actually going on behind the scenes? What were the components at stake and how they all fit in together to produce such magic?
-No? Well, let me take you on an adventure into the depth of the Flutter framework to **Unmasked this Hero Animation** by re-coding this lovely feature. Along the way, we shall learn a few things about Flutter's navigation, widget & elements trees, widgets lifecycle, geometry with dart, overlays... You're going to love it!
+No? Well, let me take you on an adventure into the depth of the Flutter framework to **Unmasked this Hero Animation** by re-coding this lovely feature. Along the way, we shall learn a few things about Flutter's navigation, widget & elements trees, widgets lifecycle, geometry with Dart, overlays... You're going to love it!
 
-_Because this is a fairly long journey, I will split into 2 parts:_
+_Because this is a fairly long journey, I will split it into 2 parts:_
 
 - Hero Animation Unmasked - Part 1: Finding the Heroes
 - Hero Animation Unmasked - Part 2: Making the Hero Fly
@@ -20,7 +20,7 @@ _Because this is a fairly long journey, I will split into 2 parts:_
 
 Before diving into the wicked part, let's have look at the general mechanism of this feature:
 
-1. Given 2 pages (source & destination), which both contains `Hero` widgets with the a `tag` property holding the same value.
+1. Given 2 pages (source & destination), which both contain `Hero` widgets with the a `tag` property holding the same value.
 <div style="text-align: center;">
   <img src="./images/initial_state.png" height="200" alt="Hero Animation - Initial State" />
 </div>
@@ -30,7 +30,7 @@ Before diving into the wicked part, let's have look at the general mechanism of 
   <img src="./images/initial_state_with_overlay.png" height="200" alt="Hero Animation - Initial State with overlay" />
 </div>
 
-3. Animate the overlayed widget from the source to the destination position on screen
+3. Animate the overlayed widget from the source to the destination position on the screen
 <div style="text-align: center;">
   <img src="./images/overlay_animated.png" height="200" alt="Hero Animation - Overlay Animated" />
 </div>
@@ -41,7 +41,7 @@ If you want to learn more about the actual Flutter implementation of the Hero An
 
 ## Example source code
 
-The entire source code of what we are going to do can be found here: [hero-animation-unmasked](https://github.com/guitoof/hero-animation-unmasked) with a step by step [commits breakdown](https://github.com/guitoof/hero-animation-unmasked/commits/master).
+The entire source code of what we are going to do can be found here: [hero-animation-unmasked](https://github.com/guitoof/hero-animation-unmasked) with a step-by-step [commits breakdown](https://github.com/guitoof/hero-animation-unmasked/commits/master).
 
 This sample application contains 2 pages:
 
@@ -50,7 +50,7 @@ This sample application contains 2 pages:
 
 If you wish to code along, you can begin at this commit: [d124af0471](https://github.com/guitoof/hero-animation-unmasked/tree/d124af047113b17525e51244668c18edee12190a) as a starting point, where we use the actual `Hero` widget to produce the targeted result.
 
-In the next sections, I will be mentioning each time the commit corresponding to the current step, if you wish to checkout the actual source code.
+In the next sections, I will be mentioning each time the commit corresponding to the current step, if you wish to check out the actual source code.
 
 ## 🙌 Let's Code!
 
@@ -193,7 +193,7 @@ super.didPush(toRoute, fromRoute);
 }
 ```
 
-Here we check for the "validity" of the flight by making sure that the source and destination routes have a non null `subtreeContext`.
+Here we check for the "validity" of the flight by making sure that the source and destination routes have a non-null `subtreeContext`.
 You might wonder what is that `subtreeContext` then?
 [The Flutter Documentation](https://api.flutter.dev/flutter/widgets/ModalRoute/subtreeContext.html) defines it as "The build context for the subtree containing the primary content of this route". So, it is the context of the widget tree that originated from this route.
 
@@ -201,7 +201,7 @@ You might wonder what is that `subtreeContext` then?
   <img src="./images/ModalRoute_subtreeContext.jpg" height="150" style="border-radius: 20px;" alt="ModalRoute.subtreeContext" />
 </div>
 
-In concrete terms, its the very same instance of `BuildContext` than the one you would access by running `ModalRoute.of(context).subtreeContext` from the `build` method of `HeroDetailsPage` which is the so called: "primary content" mentionned in the definition.
+In concrete terms, it's the very same instance of `BuildContext` than the one you would access by running `ModalRoute.of(context).subtreeContext` from the `build` method of `HeroDetailsPage` which is the so-called: "primary content" mentioned in the definition.
 
 ### 3. "Heroes, Assemble!"
 
@@ -271,8 +271,8 @@ Let's break down and see what's going on here:
 
 There are 2 interesting things, I would like to highlight:
 
-1. the `_visitHero` method shows how to navigate recursively through the Element tree to find some elements which are instances of widgets. If you want to learn more about Flutter's rendering behavior and the difference between Widget, Element & RenderObject, checkout [this talk on the subject](https://www.youtube.com/watch?v=996ZgFRENMs&t=1s)
-2. We call the `WidgetsBinding.instance?.addPostFrameCallback`. Because the `didPush` method of an observer is called right after the page is actually push into the navigation stack, the context of the destination route has not been mounted yet. Without `addPostFrameCallback`, the context of the `toRoute` page would be null and we would fallback into the case: `isFlightValid(...) == false`. With this callback, we wait for the newly pushed page to be built and ensure that the `toRoute.subtreeContext` is well defined, so that we can look for the instances of our Hero elements. If you want to understand more this method, take a look at this French article: [addPostFrameCallback](https://www.didierboelens.com/fr/2019/04/addpostframecallback/) as well as the [documentation](https://api.flutter.dev/flutter/scheduler/SchedulerBinding/addPostFrameCallback.html).
+1. the `_visitHero` method shows how to navigate recursively through the Element tree to find some elements which are instances of widgets. If you want to learn more about Flutter's rendering behavior and the difference between Widget, Element & RenderObject, check out [this talk on the subject](https://www.youtube.com/watch?v=996ZgFRENMs&t=1s)
+2. We call the `WidgetsBinding.instance?.addPostFrameCallback`. Because the `didPush` method of an observer is called right after the page is actually pushed into the navigation stack, the context of the destination route has not been mounted yet. Without `addPostFrameCallback`, the context of the `toRoute` page would be null and we would fallback into the case: `isFlightValid(...) == false`. With this callback, we wait for the newly pushed page to be built and ensure that the `toRoute.subtreeContext` is well defined so that we can look for the instances of our Hero elements. If you want to understand more about this method, take a look at this French article: [addPostFrameCallback](https://www.didierboelens.com/fr/2019/04/addpostframecallback/) as well as the [documentation](https://api.flutter.dev/flutter/scheduler/SchedulerBinding/addPostFrameCallback.html).
 
 This prints the following statements:
 
@@ -381,7 +381,7 @@ Let's take a look at what we've done so far:
 I really hope that you enjoyed this 1st Part of Hero Animation Unmasked. Hopefully, this Hero widget should start to appear less magical.
 In the next part [Hero Animation Unmasked - Part 2](./Flutter_Hero_Animation_Unmasked_Part_2.md), we'll make our Hero fly from the source page to the destination by playing a little more with elements' positions and adding the animation.
 
-If you have any questions, if you find any mistakes or inaccuracies or if you just want to have a chat about Flutter, I'd be very happy to. You can find me on Twitter [@Guitoof](https://twitter.com/guitoof) or on the [Flutter Community Slack](https://fluttercommunity.slack.com/) where I also go by the name `Guitoof`.
+If you have any questions, if you find any mistakes, inaccuracies, or if you just want to have a chat about Flutter, I'd be very happy to. You can find me on Twitter [@Guitoof](https://twitter.com/guitoof) or on the [Flutter Community Slack](https://fluttercommunity.slack.com/) where I also go by the name `Guitoof`.
 
 ## Acknowledgment
 
