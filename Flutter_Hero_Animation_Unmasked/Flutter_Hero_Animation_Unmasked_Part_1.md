@@ -193,6 +193,16 @@ super.didPush(toRoute, fromRoute);
 }
 ```
 
+Here we check for the "validity" of the flight by making sure that the source and destination routes have a non null `subtreeContext`.
+You might wonder what is that `subtreeContext` then?
+[The Flutter Documentation](https://api.flutter.dev/flutter/widgets/ModalRoute/subtreeContext.html) defines it as "The build context for the subtree containing the primary content of this route". So, it is the context of the widget tree that originated from this route.
+
+<div style="text-align: center;">
+  <img src="./images/ModalRoute_subtreeContext.jpg" height="150" style="border-radius: 20px;" alt="ModalRoute.subtreeContext" />
+</div>
+
+In concrete terms, its the very same instance of `BuildContext` than the one you would access by running `ModalRoute.of(context).subtreeContext` from the `build` method of `HeroDetailsPage` which is the so called: "primary content" mentionned in the definition.
+
 ### 3. "Heroes, Assemble!"
 
 <div style="text-align: center;">
