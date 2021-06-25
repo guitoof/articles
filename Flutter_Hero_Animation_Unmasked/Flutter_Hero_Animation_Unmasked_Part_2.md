@@ -23,7 +23,7 @@ Now that we've managed to find our Hero-wrapped widgets and display them onto th
 In order to so, we'll implement the following steps:
 
 1. Display our `UnmaskedHeroes` at their initial position on screen
-2. Animate them from their intial to their final positions
+2. Animate them from their initial to their final positions
 3. Hide the source & destination widgets during the flight
 
 Eventually, we'll buy our `UnmaskedHero` a return ticket by making sure they can fly back when we navigate back
@@ -62,7 +62,7 @@ To do so, in the `UnmaskedHeroController` class, we create a `_locateHero` metho
   }
 ```
 
-Here, we access the `RenderObject` of the hero by calling `hero.context.findRenderObject()` and the `RenderObject` of the global context (which we refer to as: its ancestor): `context.findRenderObject()`.
+Here, we access the `RenderObject` of the hero by calling `hero.context.findRenderObject()` and the `RenderObject` of the global context (which we refer to as its ancestor): `context.findRenderObject()`.
 Then we compute the [**transformation matrix**](https://en.wikipedia.org/wiki/Transformation_matrix) that describes the geometric transformation between 2 `RenderObject` using the `getTransformTo` method.
 Finally, we apply this transformation using `MatrixUtils.transformRect` to return our hero's location in the frame of reference of the given context.
 
@@ -211,7 +211,7 @@ class FlyingUnmaskedHeroState extends State<FlyingUnmaskedHero> {
 
 This widget is a simple `StatefulWidget` responsible for handling the animation between the initial and final position of our hero that we pass as parameters.
 
-For the sake of simplicity, we use an `AnimatedPositioned` widget to handle the animation between the 2 positions. The actual Hero widget uses the lower level API [`RectTween`](https://api.flutter.dev/flutter/animation/RectTween-class.html). This induces a couple of notable things here:
+For the sake of simplicity, we use an `AnimatedPositioned` widget to handle the animation between the 2 positions. The actual Hero widget uses the lower-level API [`RectTween`](https://api.flutter.dev/flutter/animation/RectTween-class.html). This induces a couple of notable things here:
 
 1. We hardcode the duration of the animation to `200`. In real life, we would want to ensure the animation duration matches the animation of the navigation between the 2 pages.
 2. We use a `Timer` of `0 milliseconds` in the `initState` method to ensure the widget is built once with the `flying` state set to false, which initialize the position to `toPosition` before being animated to toward the `fromPosition`.
@@ -256,7 +256,7 @@ Our hero animates nicely between the initial and final positions 💪.
 
 ### 3. 🧹 Clean up
 
-We're almost there. Now we just need to make sure that the original widgets and the one flying onto the overlay are not displayed simultaneously to produce the illusion that their the same widget.
+We're almost there. Now we just need to make sure that the original widgets and the one flying onto the overlay are not displayed simultaneously to produce the illusion that they are the same widget.
 In order to produce this illusion, there are 2 things left to do:
 
 1. Remove the widget from the overlay when the animation ends
@@ -478,7 +478,7 @@ In the 1st part of this article: [Flutter Hero Animation Unmasked - Part 1/2](ht
 
 in this 2nd part, we have: 6. computed the initial and final position on screen of our widget 7. animated them onto the overlay from initial to final position 8. produced the illusion of the widget "moving" by hiding the original ones during the animation and removing the overlayed one afterwards 9. added support for the backward animation when navigating back from the destination page
 
-I really hope that you enjoyed this journey to Unmasked the Hero Animation as much as I did, and that you learned some things.
+I really hope that you enjoyed this journey to Unmasked the Hero Animation as much as I did and that you learned some things.
 The Hero widget has no secrets for you now 😉
 
 If you have any questions, if you find any mistakes, inaccuracies, or if you just want to have a chat about Flutter, I'd be very happy to. You can find me on Twitter [@Guitoof](https://twitter.com/guitoof) or on the [Flutter Community Slack](https://fluttercommunity.slack.com/) where I also go by the name `Guitoof`.
