@@ -1,4 +1,4 @@
-# Hero Animation Unmasked - Part 2
+# Flutter Hero Animation Unmasked - Part 2/2
 
 Welcome back to "Hero Animation Unmasked", our little adventure to recode the flutter Shared Element Transition called "Hero Animation".
 

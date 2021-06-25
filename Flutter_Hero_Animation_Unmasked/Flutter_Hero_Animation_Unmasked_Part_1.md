@@ -1,4 +1,4 @@
-# Hero Animation Unmasked - Part 1
+# Flutter Hero Animation Unmasked - Part 1/2
 
 You all know Flutter's famous [Hero animation](https://flutter.dev/docs/development/ui/animations/hero-animations) where a "Hero" widget "flies" from one page to the next during a navigation transition:
 
