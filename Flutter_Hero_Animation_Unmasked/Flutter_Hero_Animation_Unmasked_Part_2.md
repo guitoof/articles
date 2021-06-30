@@ -479,6 +479,7 @@ In the 1st part of this article: [Flutter Hero Animation Unmasked - Part 1/2](ht
 in this 2nd part, we have: 6. computed the initial and final position on screen of our widget 7. animated them onto the overlay from initial to final position 8. produced the illusion of the widget "moving" by hiding the original ones during the animation and removing the overlayed one afterwards 9. added support for the backward animation when navigating back from the destination page
 
 I really hope that you enjoyed this journey to Unmasked the Hero Animation as much as I did and that you learned some things.
-The Hero widget has no secrets for you now 😉
+The Hero widget has no secrets for you now 😉.
+If you want to dive even deeper in your understanding of this animation, check out the [source code of the actual Hero widget](https://github.com/flutter/flutter/blob/master/packages/flutter/lib/src/widgets/heroes.dart)
 
 If you have any questions, if you find any mistakes, inaccuracies, or if you just want to have a chat about Flutter, I'd be very happy to. You can find me on Twitter [@Guitoof](https://twitter.com/guitoof) or on the [Flutter Community Slack](https://fluttercommunity.slack.com/) where I also go by the name `Guitoof`.
